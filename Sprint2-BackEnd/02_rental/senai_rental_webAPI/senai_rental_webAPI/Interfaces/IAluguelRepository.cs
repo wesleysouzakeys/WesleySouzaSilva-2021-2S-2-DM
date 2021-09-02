@@ -11,7 +11,7 @@ namespace senai_rental_webAPI.Interfaces
         List<AluguelDomain> ListarTodos();
         AluguelDomain BuscarPorId(int idAluguel);
         void Cadastrar(AluguelDomain novoAluguel);
-        void AtualizarIdUrl(int idGenero, AluguelDomain aluguelAtualizado);
+        void AtualizarIdUrl(int idAluguel, AluguelDomain aluguelAtualizado);
         void Deletar(int idAluguel);
     }
 }

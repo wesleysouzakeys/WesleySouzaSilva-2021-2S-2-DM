@@ -1,12 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Repositories\" />
+    <Compile Remove="Interfaces\IAluguelRepository.cs" />
+    <Compile Remove="Interfaces\IVeiculoRepository.cs" />
+    <Compile Remove="Repositories\AluguelRepository.cs" />
+    <Compile Remove="Repositories\VeiculoRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

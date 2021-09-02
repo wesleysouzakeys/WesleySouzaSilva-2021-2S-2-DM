@@ -4,8 +4,8 @@ GO
 INSERT INTO EMPRESA (nomeEmpresa)
 VALUES ('Rental');
 
-INSERT INTO CLIENTE (nomeCliente)
-VALUES ('Isaias'), ('Wesley');
+INSERT INTO CLIENTE (nomeCliente, sobrenomeCliente, dataNascimento)
+VALUES ('Isaias', 'de Souza', '13/08/1972'), ('Wesley', 'Silva', '30/05/2004');
 
 INSERT INTO ALUGUEL (idVeiculo, idCliente, dataAluguel)
 VALUES (1, 2, '02082020'), (2, 1, '30052004')
