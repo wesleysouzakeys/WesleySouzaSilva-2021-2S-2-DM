@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rvsuD29njnfzp46fxrkcfrmCxzpqorSS0gbD5WO+irly6awOW2LB/NvNhArdLYE54Ipvo/4fWq8kNZzxR++d/w==",
+  "dgSpecHash": "xExoKa9HbppOCR6lunZEfsb1V81PHh3zi+Ehgd4mvXzQK7Bc+i1UqACO5OWUsjTjYHQquDqD4bgpoPSGEB6zcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+  "projectFilePath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cliente\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\cliente\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

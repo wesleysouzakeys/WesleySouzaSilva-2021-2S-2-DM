@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {}
+    "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {
+    "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
         "projectName": "senai_rental_webAPI",
-        "projectPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+        "projectPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
         "packagesPath": "C:\\Users\\cliente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\senai_sprint2_backend\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\obj\\",
+        "outputPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
