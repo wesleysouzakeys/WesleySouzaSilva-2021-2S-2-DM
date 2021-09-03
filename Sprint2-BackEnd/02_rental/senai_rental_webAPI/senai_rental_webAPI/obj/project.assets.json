@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fic\\.nuget\\packages\\": {}
+    "C:\\Users\\cliente\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fic\\Desktop\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
       "projectName": "senai_rental_webAPI",
-      "projectPath": "C:\\Users\\fic\\Desktop\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
-      "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fic\\Desktop\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+      "packagesPath": "C:\\Users\\cliente\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cliente\\OneDrive - SESISENAISP - Escolas\\Área de Trabalho\\WesleySouzaSilva-2021-2S-2-DM\\Sprint2-BackEnd\\02_rental\\senai_rental_webAPI\\senai_rental_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -515,7 +515,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

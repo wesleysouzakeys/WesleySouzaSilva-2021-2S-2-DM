@@ -23,11 +23,11 @@ namespace senai_rental_webAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(ClienteDomain NovoCliente)
+        public IActionResult Post(ClienteDomain novoCliente)
         {
             try
             {
-                _ClienteRepository.Cadastrar(NovoCliente);
+                _ClienteRepository.Cadastrar(novoCliente);
                 return StatusCode(201);
             }
             catch (Exception erro)
@@ -35,5 +35,7 @@ namespace senai_rental_webAPI.Controllers
                 return BadRequest(erro);
             }
         }
+
+
     }
 }

@@ -10,7 +10,8 @@ namespace senai_rental_webAPI.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private string stringConexao = "Data Source=NOTE0113E4//SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
+        //private string stringConexao = "Data Source=NOTE0113E4\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=DESKTOP-C7I8NMI\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=wesley123";
 
         public void Atualizar(int idCliente, ClienteDomain clienteAtualizado)
         {
@@ -30,7 +31,7 @@ namespace senai_rental_webAPI.Repositories
 
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
-                    cmd.Parameters.AddWithValue("@novoCliente", novoCliente.nomeCliente);
+                    cmd.Parameters.AddWithValue("@novoNome", novoCliente.nomeCliente);
                     cmd.Parameters.AddWithValue("@novoSobrenome", novoCliente.sobrenomeCliente);
                     cmd.Parameters.AddWithValue("@novaData", novoCliente.dataNascimento);
 
