@@ -36,6 +36,32 @@ namespace senai_rental_webAPI.Controllers
             }
         }
 
+        [HttpPut("{idCliente}")]
+        public IActionResult Put(int idCliente, ClienteDomain clienteAtualizado)
+        {
+            try
+            {
+                _ClienteRepository.Atualizar(idCliente, clienteAtualizado);
+                return StatusCode(201);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
 
+        [HttpDelete("excluir/{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _ClienteRepository.Deletar(id);
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
     }
 }
