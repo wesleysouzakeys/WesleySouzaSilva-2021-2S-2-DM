@@ -36,13 +36,41 @@ namespace senai_rental_webAPI.Controllers
             }
         }
 
-        [HttpPut("{idCliente}")]
-        public IActionResult Put(int idCliente, ClienteDomain clienteAtualizado)
+        [HttpPut]
+        public IActionResult PutBody(ClienteDomain clienteAtualizado)
         {
             try
             {
-                _ClienteRepository.Atualizar(idCliente, clienteAtualizado);
+                _ClienteRepository.AtualizarIdCorpo(clienteAtualizado);
                 return StatusCode(201);
+            }
+            catch (Exception erro)
+            { 
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpPut("{idCliente}")]
+        public IActionResult PutUrl(int idCliente, ClienteDomain clienteAtualizado)
+        {
+            try
+            {
+                _ClienteRepository.AtualizarIdUrl(idCliente, clienteAtualizado);
+                return StatusCode(201);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                List<ClienteDomain> listaClientes = _ClienteRepository.ListarTodos();
+                return Ok(listaClientes);
             }
             catch (Exception erro)
             {

@@ -10,21 +10,41 @@ namespace senai_rental_webAPI.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private string stringConexao = @"Data Source=NOTE0113E5\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
-        //private string stringConexao = "Data Source=DESKTOP-C7I8NMI\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=wesley123";
+        //private string stringConexao = @"Data Source=NOTE0113E5\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=DESKTOP-C7I8NMI\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=wesley123";
 
-        public void Atualizar(int idCliente, ClienteDomain clienteAtualizado)
+        public void AtualizarIdCorpo(ClienteDomain clienteAtualizado)
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string queryUpdate = "UPDATE CLIENTE SET nomeCliente = @novoNomeCliente, sobrenomeCliente = @novoSobrenome, dataNascimento = @novaData WHERE idCliente = @idClienteAtualizado";
+                string queryUpdateBody = "UPDATE CLIENTE SET nomeCliente = @novoNomeCliente, sobrenomeCliente = @novoSobrenome, dataNascimento = @novaData WHERE idCliente = @idCliAtualizado";
 
-                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                using (SqlCommand cmd = new SqlCommand(queryUpdateBody, con))
                 {
                     cmd.Parameters.AddWithValue("@novoNomeCliente", clienteAtualizado.nomeCliente);
                     cmd.Parameters.AddWithValue("@novoSobrenome", clienteAtualizado.sobrenomeCliente);
                     cmd.Parameters.AddWithValue("@novaData", clienteAtualizado.dataNascimento);
-                    s
+                    cmd.Parameters.AddWithValue("@idCliAtualizado", clienteAtualizado.idCliente);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void AtualizarIdUrl(int idCliente, ClienteDomain clienteAtualizado)
+        {
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryUpdateUrl = "UPDATE CLIENTE SET nomeCliente = @novoNomeCliente, sobrenomeCliente = @novoSobrenome, dataNascimento = @novaData WHERE idCliente = @idCliAtualizado";
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdateUrl, con))
+                {
+                    cmd.Parameters.AddWithValue("@novoNomeCliente", clienteAtualizado.nomeCliente);
+                    cmd.Parameters.AddWithValue("@novoSobrenome", clienteAtualizado.sobrenomeCliente);
+                    cmd.Parameters.AddWithValue("@novaData", clienteAtualizado.dataNascimento);
+                    cmd.Parameters.AddWithValue("@idCliAtualizado", idCliente);
+
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -33,7 +53,31 @@ namespace senai_rental_webAPI.Repositories
 
         public ClienteDomain BuscarPorId(int idCliente)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string querySelectId = "SELECT nomeCliente, sobrenomeCliente, dataNascimento FROM CLIENTE WHERE idCliente = @idCliente";
+
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(querySelectId, con))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        ClienteDomain cliente = new ClienteDomain()
+                        {
+                            nomeCliente = rdr[0].ToString(),
+                            sobrenomeCliente = rdr[1].ToString(),
+                            dataNascimento = Convert.ToDateTime(rdr[2]),
+                        };
+                        return cliente;
+                    }
+                    return null;
+                }
+            }
         }
 
         public void Cadastrar(ClienteDomain novoCliente)
@@ -72,7 +116,36 @@ namespace senai_rental_webAPI.Repositories
 
         public List<ClienteDomain> ListarTodos()
         {
-            throw new NotImplementedException();
+            List<ClienteDomain> listaClientes = new List<ClienteDomain>();
+
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string querySelectAll = "SELECT nomeCliente, sobrenomeCliente, dataNascimento FROM CLIENTE;";
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(querySelectAll, con))
+                {
+                    con.Open();
+                    rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        ClienteDomain cliente = new ClienteDomain()
+                        {
+                            //idCliente = Convert.ToInt32(rdr[0]),
+
+                            nomeCliente = rdr[0].ToString(),
+
+                            sobrenomeCliente = rdr[1].ToString(),
+
+                            dataNascimento = Convert.ToDateTime(rdr[2])
+                        };
+
+                        listaClientes.Add(cliente);
+                    }
+                }
+            }
+            return listaClientes;
         }
     }
 }

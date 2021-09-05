@@ -11,7 +11,8 @@ namespace senai_rental_webAPI.Interfaces
         List<ClienteDomain> ListarTodos();
         ClienteDomain BuscarPorId(int idCliente);
         void Cadastrar(ClienteDomain novoCliente);
-        void Atualizar(int idCliente, ClienteDomain clienteAtualizado);
+        void AtualizarIdUrl(int idCliente, ClienteDomain clienteAtualizado);
+        void AtualizarIdCorpo(ClienteDomain clienteAtualizado);
         void Deletar(int idCliente);
     }
 }
