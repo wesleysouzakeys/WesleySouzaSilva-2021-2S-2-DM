@@ -10,8 +10,8 @@ namespace senai_rental_webAPI.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        //private string stringConexao = @"Data Source=NOTE0113E5\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
-        private string stringConexao = "Data Source=DESKTOP-C7I8NMI\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=wesley123";
+        
+        private string stringConexao = "Data Source=NOTE0113E5\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
 
         public void AtualizarIdCorpo(ClienteDomain clienteAtualizado)
         {

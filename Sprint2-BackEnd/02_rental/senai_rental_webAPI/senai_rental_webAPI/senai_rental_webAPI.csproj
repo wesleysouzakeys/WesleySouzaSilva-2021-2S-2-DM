@@ -5,10 +5,55 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Interfaces\IAluguelRepository.cs" />
-    <Compile Remove="Interfaces\IVeiculoRepository.cs" />
-    <Compile Remove="Repositories\AluguelRepository.cs" />
-    <Compile Remove="Repositories\VeiculoRepository.cs" />
+    <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net5.0\senai_rental_webAPI.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net5.0\senai_rental_webAPI.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0\appsettings.Development.json" />
+    <Content Include="bin\Debug\net5.0\appsettings.json" />
+    <Content Include="bin\Debug\net5.0\senai_rental_webAPI.deps.json" />
+    <Content Include="bin\Debug\net5.0\senai_rental_webAPI.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\net5.0\senai_rental_webAPI.runtimeconfig.json" />
+    <Content Include="obj\Debug\net5.0\senai_rental_webAPI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net5.0\staticwebassets\senai_rental_webAPI.StaticWebAssets.xml" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\senai_rental_webAPI.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net5.0\ref\senai_rental_webAPI.dll" />
+    <None Include="bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net5.0\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net5.0\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net5.0\senai_rental_webAPI.dll" />
+    <None Include="bin\Debug\net5.0\senai_rental_webAPI.exe" />
+    <None Include="bin\Debug\net5.0\senai_rental_webAPI.pdb" />
+    <None Include="bin\Debug\net5.0\System.Data.SqlClient.dll" />
+    <None Include="obj\Debug\net5.0\apphost.exe" />
+    <None Include="obj\Debug\net5.0\ref\senai_rental_webAPI.dll" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.assets.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.csproj.CopyComplete" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.dll" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.pdb" />
+    <None Include="obj\Debug\net5.0\senai_rental_webAPI.RazorTargetAssemblyInfo.cache" />
+    <None Include="obj\Debug\net5.0\staticwebassets\senai_rental_webAPI.StaticWebAssets.Manifest.cache" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\net5.0\senai_rental_webAPI.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net5.0\senai_rental_webAPI.assets.cache" />
+    <None Include="obj\Release\net5.0\senai_rental_webAPI.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\senai_rental_webAPI.csproj.nuget.g.props" />
+    <None Include="obj\senai_rental_webAPI.csproj.nuget.g.targets" />
   </ItemGroup>
 
   <ItemGroup>

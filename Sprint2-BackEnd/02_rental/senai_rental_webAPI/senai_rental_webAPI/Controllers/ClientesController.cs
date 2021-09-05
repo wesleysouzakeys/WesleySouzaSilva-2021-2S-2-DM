@@ -78,6 +78,20 @@ namespace senai_rental_webAPI.Controllers
             }
         }
 
+        [HttpGet("{idCliente}")]
+        public IActionResult GetById(int idCliente)
+        {
+            try
+            {
+                ClienteDomain clienteBuscado = _ClienteRepository.BuscarPorId(idCliente);
+                return Ok(clienteBuscado);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
         [HttpDelete("excluir/{id}")]
         public IActionResult Delete(int id)
         {
