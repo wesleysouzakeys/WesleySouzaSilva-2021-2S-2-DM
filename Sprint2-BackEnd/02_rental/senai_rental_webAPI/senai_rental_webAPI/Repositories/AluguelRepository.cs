@@ -10,7 +10,7 @@ namespace senai_rental_webAPI.Repositories
 {
     public class AluguelRepository : IAluguelRepository
     {
-        private string stringConexao = "Data Source=NOTE0113E4\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=NOTE0113E5\\SQLEXPRESS; initial catalog=M_Rental; user id=sa; pwd=Senai@132";
 
         public void AtualizarIdUrl(int idAluguel, AluguelDomain aluguelAtualizado)
         {
@@ -105,7 +105,36 @@ namespace senai_rental_webAPI.Repositories
 
         public List<AluguelDomain> ListarTodos()
         {
-            throw new NotImplementedException();
+            List<AluguelDomain> listaAlugueis = new List<AluguelDomain>();
+
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string QuerySelectAll = "SELECT IdAluguel, Aluguel.IdCliente, Aluguel.IdVeiculo, Preco, Data FROM Aluguel LEFT JOIN Cliente ON Aluguel.IdCliente = Cliente.IdCliente LEFT JOIN Veiculo ON Aluguel.IdVeiculo = Veiculo.IdVeiculo";
+
+                con.Open();
+
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(QuerySelectAll, con))
+                {
+                    rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        AluguelDomain Aluguel = new AluguelDomain()
+                        {
+                            idAluguel = Convert.ToInt32(rdr[0]),
+                            Cliente = new ClienteDomain() { idCliente = Convert.ToInt32(rdr[1]) },
+                            Veiculo = new VeiculoDomain() { idVeiculo = Convert.ToInt32(rdr[2]) },
+                            dataAluguel = Convert.ToDateTime(rdr[3])
+                        };
+
+                        listaAlugueis.Add(Aluguel);
+                    }
+                }
+            };
+
+            return listaAlugueis;
         }
     }
 }
