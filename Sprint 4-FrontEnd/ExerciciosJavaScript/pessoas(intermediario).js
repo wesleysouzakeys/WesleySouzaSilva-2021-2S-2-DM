@@ -19,7 +19,7 @@ var pessoa = {
     sexo: 'Masculino',
     idade: 17,
     altura: 1.70,
-    peso: '65kg',
+    peso: 65,
     andando: new Boolean(false),
     caminhouQuantosMetros: new Number(0)
 }
@@ -47,51 +47,59 @@ booleano que representa "verdadeiro";
 
 pessoa.andar = function(metros)
 {
-
+    pessoa.caminhouQuantosMetros = pessoa.caminhouQuantosMetros + metros
+    pessoa.andando = true
 }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-// pessoa
-// {
-//     parar()
-//     {
-//         andando = false
-//     }
-// }
+
+pessoa.parar = function()
+{
+    pessoa.andando = false
+}
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-// nomeCompleto(pessoa.nome, pessoa.sobrenome)
-// {
-//     return `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}`
-// }
+
+pessoa.nomeCompleto = function()
+{
+    return `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}`
+}
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 
-// mostrarIdade()
-// {
-
-// }
+pessoa.mostrarIdade = function()
+{
+    return `Olá, eu tenho ${pessoa.idade} anos!`
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 
+pessoa.mostrarPeso = function()
+{
+    return `Eu peso ${pessoa.peso}Kg`
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 
+pessoa.mostrarAltura = function()
+{
+    return `Minha altura é ${pessoa.altura}m`
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -99,29 +107,36 @@ Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+// console.log(pessoa.nomeCompleto()) 
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+// console.log(pessoa.mostrarIdade())
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+// console.log(pessoa.mostrarPeso())
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+// console.log(pessoa.mostrarAltura())
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
 
+for (let index = 0; index < 3; index++) {
+    pessoa.fazerAniversario()
+}
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
@@ -129,35 +144,45 @@ comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
 
+// console.log(pessoa.mostrarIdade())
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
+let metros = 10
 
+for (let index = 0; index < 3; index++) {
+    pessoa.andar(metros)
+    metros = metros + 10
+}
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
+// console.log(pessoa.andando)
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
 
+pessoa.parar()
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
 
+// console.log(pessoa.andando)
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 
+// console.log(pessoa.caminhouQuantosMetros)
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -178,3 +203,45 @@ correta, de acordo com os dados inseridos no objeto.
 
 
 // Agora, apresente-se ;)
+
+pessoa.apresentacao = function()
+{
+    if (pessoa.sexo == 'Masculino') 
+    {
+        if (pessoa.idade > 1) {
+            if (pessoa.caminhouQuantosMetros > 1) {
+                return `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros`
+            }
+            if (pessoa.caminhouQuantosMetros == 1) {
+                return `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro`
+            }
+        }if (pessoa.idade == 1) {
+            if (pessoa.caminhouQuantosMetros > 1) {
+                return `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} ano, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros`
+            }
+            if (pessoa.caminhouQuantosMetros == 1) {
+                return `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} ano, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro`
+            }
+        }
+    }
+    if (pessoa.sexo == 'Feminino') 
+    {
+        if (pessoa.idade > 1) {
+            if (pessoa.caminhouQuantosMetros > 1) {
+                return `Olá, eu sou a ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros`
+            }
+            if (pessoa.caminhouQuantosMetros == 1) {
+                return `Olá, eu sou a ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro`
+            }
+        }if (pessoa.idade == 1) {
+            if (pessoa.caminhouQuantosMetros > 1) {
+                return `Olá, eu sou a ${pessoa.nome}, tenho ${pessoa.idade} ano, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.idade} metros`
+            }
+            if (pessoa.caminhouQuantosMetros == 1) {
+                return `Olá, eu sou a ${pessoa.nome}, tenho ${pessoa.idade} ano, ${pessoa.altura} de altura e eu peso ${pessoa.peso}Kg, só hoje, eu já caminhei ${pessoa.idade} metro`
+            }
+        }
+    }
+}
+
+console.log(pessoa.apresentacao())
