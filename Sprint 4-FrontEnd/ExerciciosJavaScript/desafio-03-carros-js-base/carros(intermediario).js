@@ -39,11 +39,11 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 
 var carro = 
 {
-    marca: new String(),
-    modelo: new String(),
-    placa: new String(),
+    marca: 'Honda',
+    modelo: 'HR-V',
+    placa: '',
     ano: new Number(),
-    cor: new String(),
+    cor: '',
     quantasPortas: new Number(),
     assentos: new Number(5),
     quantidadePessoas: Number(0)
@@ -114,6 +114,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
+carro.entrar = function(quantidadePessoas)
+{
+    if (carro.quantidadePessoas === 5) {
+        return console.log(`O carro já está lotado`)
+    }else{
+        if ((quantidadePessoas + carro.quantidadePessoas) <= 5) {
+            carro.quantidadePessoas = carro.quantidadePessoas + quantidadePessoas
+            return console.log(`Já temos ${carro.quantidadePessoas} pessoas no carro!`)
+        }
+        if (5 - carro.quantidadePessoas > 1) {
+            return console.log(`Só cabem mais ${5 - carro.quantidadePessoas} pessoas!`)
+        }
+        return console.log(`Só cabem mais ${5 - carro.quantidadePessoas} pessoa!`)
+    }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -124,35 +139,50 @@ retornar algum valor.
 Qual a cor atual do carro?
 */
 
+// console.log(carro.obterCor()) //nenhum retorno
 
 // Mude a cor do carro para vermelho.
 
+// carro.mudarCor('vermelho') //cor alterada
 
 // E agora, qual a cor do carro?
 
+// console.log(carro.obterCor()) //vermelho
 
 // Mude a cor do carro para verde musgo.
 
+// carro.mudarCor('verde musgo') //cor alterada
 
 // E agora, qual a cor do carro?
 
+// console.log(carro.obterCor()) //verde musgo
 
 // Qual a marca e modelo do carro?
 
+// console.log(carro.obterMarcaModelo())
 
 // Adicione 2 pessoas no carro.
 
+carro.entrar(2)
 
 // Adicione mais 4 pessoas no carro.
 
+carro.entrar(4)
 
 // Faça o carro encher.
 
+for (let index = 0; index < carro.assentos; index++) {
+    carro.entrar(1)
+}
 
 // Tire 4 pessoas do carro.
 
+carro.quantidadePessoas - 4
 
 // Adicione 10 pessoas no carro.
 
+carro.entrar(10)
 
 // Quantas pessoas temos no carro?
+
+console.log(carro.quantidadePessoas + ' pessoas a bordo')
