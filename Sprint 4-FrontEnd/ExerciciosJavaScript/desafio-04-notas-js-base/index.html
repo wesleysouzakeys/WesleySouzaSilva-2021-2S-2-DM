@@ -16,6 +16,8 @@
         <input type="number" required name="notaum" id="notaum">
         <input type="number" name="notadois" id="notadois" required>
         <button type="submit" id="btnCalcular">Calcular</button>
+        <br>
+        <label id="resultado"></label>
     </form>
 
     <script>
@@ -34,6 +36,8 @@
             let media = ( parseInt(inputNotaUm.value) + parseInt(inputNotaDois.value) ) / 2;
 
             console.log(media);
+
+            document.getElementById("resultado").innerHTML = ("O resultado da média é " + media)
 
         });
 
