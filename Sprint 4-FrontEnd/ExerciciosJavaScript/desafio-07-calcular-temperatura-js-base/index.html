@@ -23,32 +23,7 @@
 
     <script>
        
-        let temperatura = document.querySelector('#temperatura');
-
-        let btnConverter = document.querySelector('#btnConverter');
-
-        let checkCelsius = document.querySelector('celsius').getAttribute("checked");
-
-        let checkFahrenheit = document.querySelector('fahrenheit').getAttribute("checked");
-
-        let resultado;
-
-        btnConverter.addEventListener('click', function (pagina) {
-
-            pagina.preventDefault();
-
-            if (checkCelsius == true) 
-            {
-                resultado = temperatura * 1.8 + 32
-            } 
-            else if (checkFahrenheit == true)
-            {
-                resultado = (temperatura - 32) / 1.8
-            }
-
-            document.querySelector('labelResultado').innerHTML = 'A conversão deu ' + resultado
-
-        });
+        
 
     </script>
 
