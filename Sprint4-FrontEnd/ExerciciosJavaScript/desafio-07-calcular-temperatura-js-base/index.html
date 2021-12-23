@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conversão Temperatura</title>
+</head>
+
+<body>
+
+    <h1>Conversor de temperatura</h1>
+
+    <form id="formtemperatura">
+        <input type="number" required name="temperatura" id="temperatura">
+        <input type="checkbox" id="celcius" name="temperatura">Celcius</checkbox>
+        <input type="checkbox" id="fahrenheit" name="temperatura">Fahrenheit</checkbox>
+        <button type="submit" id="btnConverter">Converter</button>
+        <br>
+        <label id="labelResultado"></label>
+    </form>
+
+    <script>
+
+        var checkCelsius = document.querySelector('#celcius')
+        var checkFahrenheit = document.querySelector('#fahrenheit')
+        var input = document.querySelector('#temperatura')
+        var botao = document.querySelector('#btnConverter')
+
+        checkCelsius.addEventListener('click', () => {
+            if (checkFahrenheit.checked) {
+                checkFahrenheit.checked = false
+            }
+        })
+
+        checkFahrenheit.addEventListener('click', () => {
+            if (checkCelsius.checked) {
+                checkCelsius.checked = false
+            }
+        })
+
+        botao.addEventListener('click', (pagina) => {
+
+            pagina.preventDefault()
+            let result
+
+            if (input.value != '') {
+                switch (checkCelsius.checked || checkFahrenheit.checked || (checkCelsius && checkFahrenheit)) {
+                    case checkCelsius.checked:
+                        result = (input.value - 32) / 1.8
+                        document.querySelector('#labelResultado').innerHTML = `O resultado da conversão foi ${new Intl.NumberFormat('pt-BR', {
+                            style: "unit",
+                            unit: "celsius"
+                        }).format(result)}`
+                        break;
+
+                    case checkFahrenheit.checked:
+                        result = input.value * 1.8 + 32
+                        document.querySelector('#labelResultado').innerHTML = `O resultado da conversão foi ${new Intl.NumberFormat('pt-BR', {
+                            style: "unit",
+                            unit: "fahrenheit"
+                        }).format(result)}`
+                        break;
+
+                    default:
+                        alert('Selecione uma medida para Conversão')
+                        break;
+                }
+
+            } else {
+                alert('Insira um valor dentro do campo abaixo')
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

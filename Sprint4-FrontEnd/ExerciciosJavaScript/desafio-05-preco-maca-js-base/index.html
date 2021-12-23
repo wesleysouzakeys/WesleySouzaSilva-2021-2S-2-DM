@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loja de maçã</title>
+</head>
+
+<body>
+
+    <h1>Loja de maçãs</h1>
+    <p>As maçãs custam R$ 0,30 cada se for comprado menos do que uma dúzia, <br> R$ 0,25 se forem compradas pelo menos
+        doze</p>
+
+    <form id="formprecomaca">
+        <input type="number" required min="0" name="quantidademaca" id="quantidademaca">
+        <button type="submit" id="btnCalcular">Calcular</button>
+        <br>
+        <label id="resultado"></label>
+    </form>
+
+    <script>
+        var qtdMaca = document.getElementById('quantidademaca')
+        var botao = document.getElementById('btnCalcular')
+        var result = document.getElementById('resultado')
+
+        botao.addEventListener('click', function (pagina) {
+
+            pagina.preventDefault();
+
+            let preco
+            if (qtdMaca.value >= 0) {   
+                if (qtdMaca.value == 1) {
+                    preco = qtdMaca.value * 0.30
+                    console.log(new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco))
+                    result.innerHTML = `Você comprou <strong>${qtdMaca.value}</strong> maçã e o preço total deu <strong>${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco)}</strong>`
+                } else if (qtdMaca.value >= 2 && qtdMaca.value < 12) {
+                    preco = qtdMaca.value * 0.30
+                    console.log(new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco))
+                    result.innerHTML = `Você comprou <strong>${qtdMaca.value}</strong> maçãs e o preço total deu <strong>${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco)}</strong>`
+                } else {
+                    preco = qtdMaca.value * 0.25
+                    console.log(new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco))
+                    result.innerHTML = `Você comprou <strong>${qtdMaca.value}</strong> maçãs e o preço total deu <strong>${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco)}</strong>`
+                }
+            }else {
+                alert('Não insira números negativos no campo')
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

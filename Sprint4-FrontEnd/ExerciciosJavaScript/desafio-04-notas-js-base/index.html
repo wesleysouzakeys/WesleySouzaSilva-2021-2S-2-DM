@@ -10,16 +10,20 @@
 
 <body>
 
-    <h1>Cálculo de notas (média aritmética)</h1>
+    <section id="calculadora">
 
-    <form id="formnotas">
-        <input type="number" required name="notaum" id="notaum">
-        <input type="number" name="notadois" id="notadois" required>
-        <button type="submit" id="btnCalcular">Calcular</button>
-        <br>
-        <label id="resultado"></label>
-    </form>
+        <h1>Cálculo de notas (média aritmética)</h1>
+        
+        <form id="formnotas">
+            <input type="number" required name="notaum" id="notaum">
+            <input type="number" name="notadois" id="notadois" required>
+            <button type="submit" id="btnCalcular">Calcular</button>
+            <br>
+            <label id="resultado"></label>
+        </form>
 
+    </section>
+        
     <script>
 
         let inputNotaUm = document.querySelector('#notaum');
