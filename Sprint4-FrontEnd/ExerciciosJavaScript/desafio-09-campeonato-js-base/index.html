@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,60 +23,106 @@
             nome: "Liverpool",
             vitorias: 23,
             empates: 7,
-            derrotas:1,
-            golsproprio:70,
-            golscontra:52
+            derrotas: 1,
+            golsproprio: 70,
+            golscontra: 52
         }, {
             nome: "City",
             vitorias: 24,
             empates: 2,
-            derrotas:4,
-            golsproprio:79,
-            golscontra:21
+            derrotas: 4,
+            golsproprio: 79,
+            golscontra: 21
         }, {
             nome: "Tottenhan",
             vitorias: 20,
             empates: 1,
-            derrotas:9,
-            golsproprio:57,
-            golscontra:32
+            derrotas: 9,
+            golsproprio: 57,
+            golscontra: 32
         }, {
             nome: "Arsenal",
             vitorias: 18,
             empates: 6,
-            derrotas:6,
-            golsproprio:63,
-            golscontra:39
+            derrotas: 6,
+            golsproprio: 63,
+            golscontra: 39
         }, {
             nome: "Manchester United",
             vitorias: 17,
             empates: 7,
-            derrotas:6,
-            golsproprio:58,
-            golscontra:40
+            derrotas: 6,
+            golsproprio: 58,
+            golscontra: 40
         }, {
             nome: "Chelsea",
             vitorias: 17,
             empates: 6,
-            derrotas:7,
-            golsproprio:50,
-            golscontra:33
+            derrotas: 7,
+            golsproprio: 50,
+            golscontra: 33
         }];
 
         // 1.	Lista somente os times cujas vitórias seja maior ou igual que 20
-        //
+        console.log("Lista somente os times cujas vitórias seja maior ou igual que 20")
+        console.log(times.filter(t => t.vitorias >= 20))
+        console.log("")
 
         // 2.	Traga somente os nomes dos times;
-        //
+        console.log("Traga somente os nomes dos times")
+        const SOMENTENOMES = times.map(t => {
+            let listaNomes = {}
+
+            listaNomes.nome = t.nome
+
+            return listaNomes
+        })
+        console.log(SOMENTENOMES)
+        console.log("")
 
         // 3.	Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36;
-        //
+        console.log("Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36")
+        times.push({
+            nome : "Wolves",
+            vitorias : 12,
+            empates : 8,
+            derrotas : 10,
+            golsproprio : 38,
+            golscontra : 36
+        })
+        console.log(times)
+        console.log("")
 
         // 4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time
-        //
+        console.log("Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time")
+        const LISTACOMPLETA = times.map(t => {
+            let novaLista = {}
+
+            let qtdJogos = t.vitorias + t.derrotas + t.empates
+
+            novaLista.nome = t.nome
+            novaLista.quantidadeJogos = qtdJogos
+            novaLista.vitorias = t.vitorias
+            novaLista.empates = t.empates
+            novaLista.derrotas = t.derrotas
+
+            return novaLista 
+        })
+        console.log(LISTACOMPLETA)
+        console.log("")
 
         // 5.	Informe a quantidade de jogos do campeonato;
-        //
+        console.log("Informe a quantidade de jogos do campeonato")
+        
+        const JogosTimes = times.map(t => {
+            const novaLista = {};
+            novaLista.quantidadeJogos = t.vitorias + t.empates + t.derrotas;
+            return novaLista;
+        })
+
+        const JogosCampeonato = JogosTimes.reduce((total, atual) => total + atual.quantidadeJogos,0);
+
+        console.log(`No campeonato, foram realizados ${JogosCampeonato} jogos`);
     </script>
 
 </body>
